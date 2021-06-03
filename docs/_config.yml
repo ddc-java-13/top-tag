@@ -8,10 +8,10 @@ titles_from_headings:
 
 # Modify the contents below for the specific project.
 
-title: "Android Project Proposal"
-description: "Trust me, it'll be cool!"
+title: "New Mexico Draw Prediction"
+description: "Collect Elk herd numbers per game management unit, tag draw numbers, and harvest reports to increase odds of drawing a hunting tag.!"
 author:
-  name: "Java+Android Student"
+  name: "Lee Scroggins"
 
 # Do not change the following line.
   copyright: true

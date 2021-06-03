@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.appstarter;
+package edu.cnm.deepdive.toptag;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
