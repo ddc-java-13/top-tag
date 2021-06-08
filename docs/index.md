@@ -7,21 +7,25 @@ The App purpose would be to:
 
 ## Intended users
 
-* The first user would be for any elk hunter that would want to increase his/her odds of drawing a tag in New Mexico.
-* The second user would be anyone who tries to decipher any over the counter huntable areas for New Mexico, then open up a specific Game Management Unti Map, locate the area, then open up google maps and calculate distances to each GMU.
+* The first user would be for any elk hunter that is interested in seeing his or her odds of drawing a hunting tag in New Mexico for Elk.
+* The second user would be anyone interested in harvest reports per Game Management Unit.
 
-> As a hunter, I want an app that can decipher game harvest reports, so that I can make better choices of successfully drawing a tag.
-> As an hunter, I want to combine multiple apps and screens into one, so that I can easier decipher legal hunting areas, see the location, and determine travel distance in 1 screen.
+> As a hunter, I want an app that can decipher game harvest reports to show me the percentage of tags issued per tag application, this will increase my channces of successfully drawing a tag without wading through lists of data.
+> As a shed hunter, I want to see which Game Management Units have the largest herds across the state of New Mexico, this will allow me to hike in the areas and increase my odds of finding shed antlers.
 
 ## Functionality
 
-
-* Determine legal hunting Game Management Units.
-* Look at herd populations
-* Compare successful tag draws with the amount of game harvested.
-* Quickly locate the GMU on a map.
-* Have location data to softly show travel distance.
-* Show direct route to the GMU with travel time/distance.
+* The app will be a satelite map of New Mexico.
+* Each Game Management Unit will be overlayed on the satelite map of New Mexico.
+* The user will select the animal type to be hunted, for now it will be 
+  at Elk for brevity (Antlered, Antlerless)
+* The user will select method of hunt (Archery, Any Legal)
+* The user will select the date range.
+  * Possible classic hamburger menu in top left or right corner more TBD. 
+* The app will show herd numbers for previous year, tag applications, tag draws, and harvest reports.
+  * App will generate data in a list.  User can show just draw odds % or all data.  Overlay can be selected to show the data in each Game Management Unit on the satelite map of New Mexico.
+* The overall purpose will be to display the odds of drawing a tag for the selected Game Management 
+  Unit, type animal, weapon of choice for the selected date range.
 
 ## Persistent data
 
@@ -29,16 +33,13 @@ The App purpose would be to:
 
 ## Device/external services
 
-* New Mexico wildlife management website
-* Maps
-* Satelite for location
+* New Mexico wildlife management website to retrieve wild life data and harvest reports.
 
 ## Stretch goals/possible enhancements 
 
 
 * Would require permission from NM wildlife management, but storing a copy of users hunting and fishing licenses and E-tags.
-
-* Pulling data and compliling from NM wildlife harvest reports
+* Incorporate for all game animals that require draw.
+* Incorporate all Over the Counter game that do not require tag draw.  
 * Incorporating satellite for map/traveling distance.
-* Overlay GMU boundaries
 * Storing user location
