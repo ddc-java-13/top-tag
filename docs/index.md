@@ -25,9 +25,9 @@ Furthermore, this app will display for each legal weapon and corresponding seaso
 * The app will dispaly herd numbers for previous year, tag applications, tag draws, and harvest reports. 
 * Using radio buttons, the user can select which data to display.  The user can use a radio button to choose whether the selected data will display inside each corresponding hunt region or in a list version on the side of the sceen in numerical order of the Game Management Unit.  For example:
 
-    Unit  1 - xx
-    Unit  2 - xx
-    Unit 3B - xx
+  *  Unit  1 - xx
+  *  Unit  2 - xx
+  *  Unit 3B - xx
 
 ## Persistent data
 
