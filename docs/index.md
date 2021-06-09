@@ -1,9 +1,10 @@
 ## Summary
 
-The App purpose would be to: 
-1) Determine the odds of drawing an elk tag per game management unit in New Mexico.
-2) To use the location and determine travel distance to each GMU.
-3) Room for expansion for each game species for New Mexico.
+The purpose of the App would be to aid the user in sorting data and using the sorted data to apply for hunting tags.  
+
+The app will sort the size of the herds per each Game Management Unit, calculate how many people applied in the draw for a tag with how many people recieved a tag.  This will allow the user recieve see his or her odds of drawing an elk tag in each Game Management Unit.  
+
+Furthermore, this app will display for each legal weapon and corresponding seasons for Antlered and Antlerless hunts.
 
 ## Intended users
 
@@ -19,21 +20,17 @@ The App purpose would be to:
 
 ## Functionality
 
-* The app will be a satelite map of New Mexico.
-* Each Game Management Unit will be overlayed on the satelite map of New Mexico.
-* The user will select the animal type to be hunted, for now it will be 
-  at Elk for brevity (Antlered, Antlerless)
-* The user will select method of hunt (Archery, Any Legal)
-* The user will select the date range.
-  * Possible classic hamburger menu in top left or right corner more TBD. 
-* The app will show herd numbers for previous year, tag applications, tag draws, and harvest reports.
+* The app will be a satelite view of New Mexico with each Game Management Unit overlayed on the map of New Mexico.
+* The user will use a hamburger menue to select the animal type (Antlered, Antlerless) to be hunted. 
+* The user will expand the menu to select the weapon type.
+* The user will expand the menu for the date range of the season.   
+* The app will dispaly herd numbers for previous year, tag applications, tag draws, and harvest reports.
   * App will generate data in a list.  User can show just draw odds % or all data.  Overlay can be selected to show the data in each Game Management Unit on the satelite map of New Mexico.
-* The overall purpose will be to display the odds of drawing a tag for the selected Game Management 
-  Unit, type animal, weapon of choice for the selected date range.
+
 
 ## Persistent data
 
-* Location
+* Herd numbers, draw statistics
 
 ## Device/external services
 
