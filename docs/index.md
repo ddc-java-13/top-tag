@@ -12,10 +12,14 @@ Furthermore, this app will display for each legal weapon and corresponding seaso
 * The second user would be anyone interested in harvest reports per Game Management Unit.
 
 
-*Hunter seeking elk tag
+>Hunter seeking elk tag
+> 
+> 
 > As a hunter, I want an app that can decipher game harvest reports to show me the percentage of tags issued per tag application, this will increase my channces of successfully drawing a tag without wading through lists of data.
 
-*Shed Hunter
+>Shed Hunter
+> 
+> 
 > As a shed hunter, I want to see which Game Management Units have the largest herds across the state of New Mexico, this will allow me to hike in the areas and increase my odds of finding shed antlers.
 
 ## Functionality
