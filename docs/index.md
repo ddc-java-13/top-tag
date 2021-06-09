@@ -8,29 +8,26 @@ Furthermore, this app will display for each legal weapon and corresponding seaso
 
 ## Intended users
 
-* The first user would be for any elk hunter that is interested in seeing his or her odds of drawing a hunting tag in New Mexico for Elk.
-* The second user would be anyone interested in harvest reports per Game Management Unit.
-
-
->Hunter seeking elk tag
-> 
+* Shed hunter desiring to see herd size.
 > 
 > As a hunter, I want an app that can decipher game harvest reports to show me the percentage of tags issued per tag application, this will increase my channces of successfully drawing a tag without wading through lists of data.
 
->Shed Hunter
-> 
-> 
+* The first user would be for any elk hunter.
+>
 > As a shed hunter, I want to see which Game Management Units have the largest herds across the state of New Mexico, this will allow me to hike in the areas and increase my odds of finding shed antlers.
 
 ## Functionality
 
-* The app will be a satelite view of New Mexico with each Game Management Unit overlayed on the map of New Mexico.
-* The user will use a hamburger menue to select the animal type (Antlered, Antlerless) to be hunted. 
+* The app will show a satelite view of New Mexico with each Game Management Unit overlayed on the map of New Mexico to the viewer.
+* The user will use a hamburger menu to select the animal type (Antlered, Antlerless) to be hunted. 
 * The user will expand the menu to select the weapon type.
 * The user will expand the menu for the date range of the season.   
-* The app will dispaly herd numbers for previous year, tag applications, tag draws, and harvest reports.
-  * App will generate data in a list.  User can show just draw odds % or all data.  Overlay can be selected to show the data in each Game Management Unit on the satelite map of New Mexico.
+* The app will dispaly herd numbers for previous year, tag applications, tag draws, and harvest reports. 
+* Using radio buttons, the user can select which data to display.  The user can use a radio button to choose whether the selected data will display inside each corresponding hunt region or in a list version on the side of the sceen in numerical order of the Game Management Unit.  For example:
 
+    Unit  1 - xx
+    Unit  2 - xx
+    Unit 3B - xx
 
 ## Persistent data
 
@@ -44,7 +41,7 @@ Furthermore, this app will display for each legal weapon and corresponding seaso
 
 
 * Would require permission from NM wildlife management, but storing a copy of users hunting and fishing licenses and E-tags.
-* Incorporate for all game animals that require draw.
-* Incorporate all Over the Counter game that do not require tag draw.  
-* Incorporating satellite for map/traveling distance.
-* Storing user location
+* Incorporate for all game animals that require draw.  Current App is designed for Elk.  Future builds would incorporate Black Bear, Deer, Turkey, Oryx, Barbary Sheep, Javelina, and Prong Horn.
+* Incorporate all "Over the Counter" game that do not require tag draw.  This would be for non-draw required Black Bear, Turkey, and Barbary Sheep. 
+* Incorporate satellite data and user location for map/traveling distance between user location and destination.
+
