@@ -1,6 +1,6 @@
 ## Summary
 
-The purpose of the App would be to aid the user in sorting data and using the sorted data to apply for hunting tags.  
+The purpose of the App would be to show each Game Management Unit and dispaly odds of recieving a tag.
 
 The app will sort the size of the herds per each Game Management Unit, calculate how many people applied in the draw for a tag with how many people recieved a tag.  This will allow the user recieve see his or her odds of drawing an elk tag in each Game Management Unit.  
 
