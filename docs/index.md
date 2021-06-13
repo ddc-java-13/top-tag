@@ -12,11 +12,13 @@ Antlerless hunts.
 
 ## Intended users
 
-* Elk hunters:
+  * Elk hunters:
+
 > As a hunter, I want an app that can decipher game harvest reports to show me the percentage of tags issued per tag application, this will increase my channces of successfully drawing a tag without wading through lists of data.
 
 
-* Shed hunters:
+  * Shed hunters:
+
 > As a shed hunter, I want to see which Game Management Units have the largest herds across the state of New Mexico, this will allow me to hike in the areas and increase my odds of finding shed antlers.
 
 ## Functionality
