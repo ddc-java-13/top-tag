@@ -53,8 +53,8 @@ Antlerless hunts.
   * Number of tags issued
   * Elk harvests
   
-* Database Management<a href="https://developer.android.com/training/data-storage/room">Room API</a>
-* New Mexico Game & Wildlife<a href="https://www.wildlife.state.nm.us/download/hunting/species/elk/Elk-Hunting-Prospects-2021-2022-.pdf">Elk Hunting Prospects 2021-2022</a>
+* Database Management <a href="https://developer.android.com/training/data-storage/room">Room API</a>
+* New Mexico Game & Wildlife <a href="https://www.wildlife.state.nm.us/download/hunting/species/elk/Elk-Hunting-Prospects-2021-2022-.pdf">Elk Hunting Prospects 2021-2022</a>
 
   Top Tag will function while away from internet services to incorporate stretch goals.
 
@@ -62,7 +62,7 @@ Antlerless hunts.
 
 * Map <a href="https://developers.google.com/maps/documentation/android-sdk/tileoverlay">Tile Overlays API</a>
 
-## Stretch goals/possible enhancements
+## Stretch goals/enhancements
 
 * Storing a copy of users hunting and fishing licenses and E-tags.
 * Incorporate for all game animals that require draw. The app is current designed for Elk. Future versions of the build
