@@ -1,6 +1,6 @@
 remote_theme: ddc-java/ddc-day
 repository_links:
-  enabled: false
+  enabled: true
 page_navigator:
   enabled: false
 titles_from_headings:
@@ -8,10 +8,12 @@ titles_from_headings:
 
 # Modify the contents below for the specific project.
 
-title: "New Mexico Draw Prediction"
-description: "Collect Elk herd numbers per game management unit, tag draw numbers, and harvest reports to increase odds of drawing a hunting tag.!"
+title: "Top Tag"
+description: "An Android implementation to collect Elk herd numbers and predict tag draw odds per Game Management Unit."
 author:
   name: "Lee Scroggins"
-
+  email: lee_scroggins@yahoo.com
 # Do not change the following line.
   copyright: true
+
+

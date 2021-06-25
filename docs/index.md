@@ -1,3 +1,10 @@
+---
+title: Overview
+subtitle: Project description and status
+menu: Overview
+order: 0
+---
+
 ## Summary
 
 The purpose of the App would be to show each Game Management Unit and dispaly odds of recieving a
