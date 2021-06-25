@@ -7,14 +7,14 @@ order: 0
 
 ## Summary
 
-The purpose of the App would be to show each Game Management Unit and dispaly odds of recieving a
+The purpose of the Top Tag App is to show each Game Management Unit and dispaly odds of recieving a
 tag.
 
 The app will sort the size of the herds per each Game Management Unit, calculate how many people
-applied in the draw for a tag with how many people recieved a tag. This will allow the user recieve
+applied in the draw for a tag with how many people recieved a tag. This will allow the user to
 see his or her odds of drawing an elk tag in each Game Management Unit.
 
-Furthermore, this app will display for each legal weapon and corresponding seasons for Antlered and
+Furthermore, this app will calculate draw odds for each legal weapon and corresponding seasons for Antlered and
 Antlerless hunts.
 
 ## Intended users
@@ -38,8 +38,8 @@ Antlerless hunts.
 * The app will dispaly herd numbers for previous year, tag applications, tag draws, and harvest
   reports.
 * Using radio buttons, the user can select which data to display. The user can use a radio button to
-  choose whether the selected data will display inside each corresponding hunt region or in a list
-  version on the side of the sceen in numerical order of the Game Management Unit. For example:
+  choose whether the selected data will display inside each corresponding hunt region or in a list of units
+  on the side of the screen. For example:
 
     * Unit 1 - xx
     * Unit 2 - xx
@@ -52,19 +52,23 @@ Antlerless hunts.
   * Number of applicants
   * Number of tags issued
   * Elk harvests
+  
+* Database Management<a href="https://developer.android.com/training/data-storage/room">Room API</a>
+* New Mexico Game & Wildlife<a href="https://www.wildlife.state.nm.us/download/hunting/species/elk/Elk-Hunting-Prospects-2021-2022-.pdf">Elk Hunting Prospects 2021-2022</a>
+
+  Top Tag will function while away from internet services to incorporate stretch goals.
 
 ## Device/external services
 
-* New Mexico wildlife management website to retrieve wild life data and harvest reports.
+* Map <a href="https://developers.google.com/maps/documentation/android-sdk/tileoverlay">Tile Overlays API</a>
 
 ## Stretch goals/possible enhancements
 
-* Would require permission from NM wildlife management, but storing a copy of users hunting and
-  fishing licenses and E-tags.
-* Incorporate for all game animals that require draw. Current App is designed for Elk. Future builds
-  would incorporate Black Bear, Deer, Turkey, Oryx, Barbary Sheep, Javelina, and Prong Horn.
+* Storing a copy of users hunting and fishing licenses and E-tags.
+* Incorporate for all game animals that require draw. The app is current designed for Elk. Future versions of the build
+  will incorporate Black Bear, Deer, Turkey, Oryx, Barbary Sheep, Javelina, and Prong Horn.
 * Incorporate all "Over the Counter" game that do not require tag draw. This would be for non-draw
   required Black Bear, Turkey, and Barbary Sheep.
 * Incorporate satellite data and user location for map/traveling distance between user location and
-  destination.
+  destination and to identify key locations such as camp grounds and trail access.
 
