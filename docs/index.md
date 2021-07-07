@@ -54,7 +54,7 @@ Antlerless hunts.
   * Elk harvests
   
 * Database Management <a href="https://developer.android.com/training/data-storage/room">Room API</a>
-* New Mexico Game & Wildlife <a href="https://www.wildlife.state.nm.us/download/hunting/species/elk/Elk-Hunting-Prospects-2021-2022-.pdf">Elk Hunting Prospects 2021-2022</a>
+* New Mexico Game & Wildlife ya that was<a href="https://www.wildlife.state.nm.us/download/hunting/species/elk/Elk-Hunting-Prospects-2021-2022-.pdf">Elk Hunting Prospects 2021-2022</a>
 
   Top Tag will function while away from internet services to incorporate stretch goals.
 

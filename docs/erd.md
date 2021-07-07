@@ -8,4 +8,4 @@ order: 20
 ## ERD Placeholder
 
 
-![Top Tag Wireframe](img/erd.png)
+[![Top Tag Wireframe](img/erd.png)][erd.pdf]
