@@ -40,4 +40,6 @@ public interface ApplicationChoiceDao {
   Single<Integer> delete(Collection<? extends ApplicationChoice> applicationChoices);
 
 
+
+
 }

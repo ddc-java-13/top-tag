@@ -2,40 +2,45 @@ package edu.cnm.deepdive.toptag.model.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.PrimaryKey;
-import com.google.gson.annotations.Expose;
 
 public class GameManagementUnit {
 
-  @PrimaryKey
-  @ColumnInfo(name = "game_management_unit")
-  private int gameManagementUnit;
+  @PrimaryKey(autoGenerate = true)
+  @ColumnInfo(name = "game_management_unit_id")
+  private long id;
 
-  @Expose
+  @ColumnInfo(name = "unit_number", index = true)
+  private int unitNumber;
+
   @ColumnInfo(name = "animal_name")
   private String animalName;
 
-  @Expose
   @ColumnInfo(name = "herd_size")
   private int herdSize;
 
-  @Expose
   @ColumnInfo(name = "harvest_number")
   private int harvestNumber;
 
-  @Expose
   @ColumnInfo(name = "tag_applications")
   private int tagApplications;
 
-  @Expose
   @ColumnInfo(name = "tags_issued")
   private int tagsIssued;
 
-  public int getGameManagementUnit() {
-    return gameManagementUnit;
+  public long getId() {
+    return id;
   }
 
-  public void setGameManagementUnit(int gameManagementUnit) {
-    this.gameManagementUnit = gameManagementUnit;
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public int getUnitNumber() {
+    return unitNumber;
+  }
+
+  public void setUnitNumber(int unitNumber) {
+    this.unitNumber = unitNumber;
   }
 
   public String getAnimalName() {

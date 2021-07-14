@@ -9,8 +9,10 @@ import com.google.gson.annotations.Expose;
 
 @Entity(
     indices = {
-        @Index(value = {"user_id", "user_name"}, unique = true)
+        @Index(value = {"user_name", "oauth_key"}, unique = true)
+
     }
+
 )
 public class User {
 
@@ -18,13 +20,11 @@ public class User {
   @ColumnInfo(name = "user_id")
   private long id;
 
-  @Expose
   @ColumnInfo(name = "user_name")
   @NonNull
   private String userName;
 
-  @Expose
-  @ColumnInfo
+  @ColumnInfo(name = "oauth_key")
   private String oauthKey;
 
 
@@ -52,4 +52,7 @@ public class User {
   public void setOauthKey(String oauthKey) {
     this.oauthKey = oauthKey;
   }
+
+//  @Transaction
+//  @Query("SELECT * FROM ")
 }

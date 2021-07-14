@@ -1,31 +1,47 @@
 package edu.cnm.deepdive.toptag.model.entity;
 
-import androidx.annotation.InspectableProperty.EnumEntry;
 import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
-import com.google.gson.annotations.Expose;
 import java.util.Date;
 
+@Entity(
+    indices = {},
+    foreignKeys = {
+        @ForeignKey(
+            entity = User.class,
+            childColumns = {"user_id"},
+            parentColumns = {"user_id"},
+            onDelete = ForeignKey.CASCADE
+        ),
+        @ForeignKey(
+            entity = GameManagementUnit.class,
+            childColumns = {"game_management_unit_id"},
+            parentColumns = {"game_management_unit_id"},
+            onDelete = ForeignKey.CASCADE
+        )
+    }
+)
 public class ApplicationChoice {
 
   @PrimaryKey
-  @ColumnInfo(name = "application_choice")
-  private String applicationChoice;
+  @ColumnInfo(name = "application_choice_id")
+  private String id;
 
-  @Expose
-  private Date season;
+  private Date season;    /* TODO find better way to classify seas than date.*/
 
-  @Expose
   @ColumnInfo(name = "user_id")
-  private long userId;                                // TODO Ask about enum field.
+  private long userId;
 
+  private WeaponType weaponType;
 
-  public String getApplicationChoice() {
-    return applicationChoice;
+  public String getId() {
+    return id;
   }
 
-  public void setApplicationChoice(String applicationChoice) {
-    this.applicationChoice = applicationChoice;
+  public void setId(String id) {
+    this.id = id;
   }
 
   public Date getSeason() {
@@ -44,6 +60,8 @@ public class ApplicationChoice {
     this.userId = userId;
   }
 
-  @EnumEntry(name = "weapon_type", value = 0)
-  private enum weaponType {}
+  private enum WeaponType {
+    BOW, RIFLE
+  }
+
 }
