@@ -4,14 +4,14 @@ import android.app.Application;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.TypeConverter;
+import androidx.room.TypeConverters;
 import edu.cnm.deepdive.toptag.model.dao.ApplicationChoiceDao;
 import edu.cnm.deepdive.toptag.model.dao.GameManagementUnitDao;
 import edu.cnm.deepdive.toptag.model.dao.UserDao;
 import edu.cnm.deepdive.toptag.model.entity.ApplicationChoice;
+import edu.cnm.deepdive.toptag.model.entity.ApplicationChoice.WeaponType;
 import edu.cnm.deepdive.toptag.model.entity.GameManagementUnit;
 import edu.cnm.deepdive.toptag.model.entity.User;
-//import edu.cnm.deepdive.toptag.service.TopTagDatabase.Converters;
 import java.util.Date;
 
 @Database(     /*After database, attributes.  Entities, version, exportSchema.  some have integer,floating point, string values ets*/
@@ -21,10 +21,12 @@ import java.util.Date;
     exportSchema = true
 
 )
+@TypeConverters({WeaponType.class})
+
 // Need to tell ROOM where converters are
 //@TypeConverter({Converters.class})    //Enum would be 'X'.class
 
-/*Database class*/
+             /*Database class*/
 // Set Fields.  String CONSTANT for name.  Application context;.
 // Add SET CONTEXT method.
 // Create NESTED CLASS for InstanceHolder, Invoke Room.databaseBuilder.
@@ -78,5 +80,9 @@ public abstract class TopTagDatabase extends RoomDatabase {
 //    }
 //
 //  }
+
+
+
+
 
 }

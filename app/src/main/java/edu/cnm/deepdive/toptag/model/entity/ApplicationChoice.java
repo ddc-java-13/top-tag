@@ -11,10 +11,7 @@ import java.util.Date;
 
 @Entity(
     tableName = "application_choice",
-    indices = {
-        @Index(value = "season"),
-        @Index(value = "weapon_type")
-    },
+
     foreignKeys = {
         @ForeignKey(
             entity = User.class,
@@ -34,22 +31,33 @@ public class ApplicationChoice {
 
   @PrimaryKey
   @ColumnInfo(name = "application_choice_id")
-  private String id;
+  private long id;
 
-  @ColumnInfo(name = "season_id")
+  @ColumnInfo(name = "game_management_unit_id", index = true)
+  private long  gameManagementUnitId;
+
+  @ColumnInfo(index = true)
   private String season;    /* TODO find better way to classify season than date.*/
 
-  @ColumnInfo(name = "user_id")
+  @ColumnInfo(name = "user_id", index = true)
   private long userId;
 
-  @ColumnInfo(name = "weapon_type")
+  @ColumnInfo(name = "weapon_type", index = true)
   private WeaponType weaponType;
 
-  public String getId() {
+  public long getGameManagementUnitId() {
+    return gameManagementUnitId;
+  }
+
+  public void setGameManagementUnitId(long gameManagementUnitId) {
+    this.gameManagementUnitId = gameManagementUnitId;
+  }
+
+  public long getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(long id) {
     this.id = id;
   }
 
@@ -67,6 +75,14 @@ public class ApplicationChoice {
 
   public void setUserId(long userId) {
     this.userId = userId;
+  }
+
+  public WeaponType getWeaponType() {
+    return weaponType;
+  }
+
+  public void setWeaponType(WeaponType weaponType) {
+    this.weaponType = weaponType;
   }
 
   public enum WeaponType {

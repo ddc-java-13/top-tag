@@ -1,0 +1,228 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "79ea82c1dd2faf1bc4bcf502be5e679a",
+    "entities": [
+      {
+        "tableName": "game_management_unit",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`game_management_unit_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `unit_number` INTEGER NOT NULL, `animal_name` TEXT, `herd_size` INTEGER NOT NULL, `harvest_number` INTEGER NOT NULL, `tag_applications` INTEGER NOT NULL, `tags_issued` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "game_management_unit_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitNumber",
+            "columnName": "unit_number",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "animalName",
+            "columnName": "animal_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "herdSize",
+            "columnName": "herd_size",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "harvestNumber",
+            "columnName": "harvest_number",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tagApplications",
+            "columnName": "tag_applications",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tagsIssued",
+            "columnName": "tags_issued",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "game_management_unit_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_game_management_unit_unit_number",
+            "unique": false,
+            "columnNames": [
+              "unit_number"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_game_management_unit_unit_number` ON `${TABLE_NAME}` (`unit_number`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "application_choice",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`application_choice_id` INTEGER NOT NULL, `game_management_unit_id` INTEGER NOT NULL, `season` TEXT, `user_id` INTEGER NOT NULL, `weapon_type` INTEGER, PRIMARY KEY(`application_choice_id`), FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`game_management_unit_id`) REFERENCES `game_management_unit`(`game_management_unit_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "application_choice_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gameManagementUnitId",
+            "columnName": "game_management_unit_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "season",
+            "columnName": "season",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userId",
+            "columnName": "user_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weaponType",
+            "columnName": "weapon_type",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "application_choice_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_application_choice_game_management_unit_id",
+            "unique": false,
+            "columnNames": [
+              "game_management_unit_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_application_choice_game_management_unit_id` ON `${TABLE_NAME}` (`game_management_unit_id`)"
+          },
+          {
+            "name": "index_application_choice_season",
+            "unique": false,
+            "columnNames": [
+              "season"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_application_choice_season` ON `${TABLE_NAME}` (`season`)"
+          },
+          {
+            "name": "index_application_choice_user_id",
+            "unique": false,
+            "columnNames": [
+              "user_id"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_application_choice_user_id` ON `${TABLE_NAME}` (`user_id`)"
+          },
+          {
+            "name": "index_application_choice_weapon_type",
+            "unique": false,
+            "columnNames": [
+              "weapon_type"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_application_choice_weapon_type` ON `${TABLE_NAME}` (`weapon_type`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "User",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "user_id"
+            ],
+            "referencedColumns": [
+              "user_id"
+            ]
+          },
+          {
+            "table": "game_management_unit",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "game_management_unit_id"
+            ],
+            "referencedColumns": [
+              "game_management_unit_id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "User",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_name` TEXT NOT NULL, `oauth_key` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "user_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userName",
+            "columnName": "user_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "oauthKey",
+            "columnName": "oauth_key",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "user_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_User_user_name",
+            "unique": true,
+            "columnNames": [
+              "user_name"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_User_user_name` ON `${TABLE_NAME}` (`user_name`)"
+          },
+          {
+            "name": "index_User_oauth_key",
+            "unique": true,
+            "columnNames": [
+              "oauth_key"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_User_oauth_key` ON `${TABLE_NAME}` (`oauth_key`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '79ea82c1dd2faf1bc4bcf502be5e679a')"
+    ]
+  }
+}

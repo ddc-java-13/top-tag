@@ -46,7 +46,7 @@ public interface ApplicationChoiceDao {
   @Query("SELECT * FROM application_choice WHERE application_choice_id = :applicationChoice")
   LiveData<ApplicationChoice> select(String applicationChoice);
 
-  @Query("SELECT * FROM application_choice WHERE season_id = :season")
+  @Query("SELECT * FROM application_choice WHERE season = :season")
   LiveData<ApplicationChoice> selectBySeason(String season);
 
   @Query("SELECT * FROM application_choice WHERE weapon_type = :weaponType")

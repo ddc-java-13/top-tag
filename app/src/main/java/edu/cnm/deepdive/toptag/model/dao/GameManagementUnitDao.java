@@ -18,13 +18,13 @@ public interface GameManagementUnitDao {
 
 
   @Insert
-  Single<Integer> insert(GameManagementUnit gameManagementUnit);
+  Single<Long> insert(GameManagementUnit gameManagementUnit);
 
   @Insert
-  Single<List<Integer>> insert(GameManagementUnit... gameManagementUnits);
+  Single<List<Long>> insert(GameManagementUnit... gameManagementUnits);
 
   @Insert
-  Single<List<Integer>> insert(Collection<? extends GameManagementUnit> gameManagementUnits);
+  Single<List<Long>> insert(Collection<? extends GameManagementUnit> gameManagementUnits);
 
   @Update
   Single<Integer> update(GameManagementUnit gameManagementUnit);
