@@ -1,9 +1,10 @@
-## [Entity-relationship Diagram](erd.md)
+## [Entity Relationship Diagram](erd.md)
 
-## [Entity classes](https://github.com/ddc-java-13/top-tag/tree/main/app/src/main/java/edu/cnm/deepdive/toptag/model/entity)
+## [Entity Classes](https://github.com/ddc-java-13/top-tag/tree/main/app/src/main/java/edu/cnm/deepdive/toptag/model/entity)
 
-##[Data-access Object](https://github.com/ddc-java-13/top-tag/tree/main/app/src/main/java/edu/cnm/deepdive/toptag/model/dao)
+##[Data Access Object](https://github.com/ddc-java-13/top-tag/tree/main/app/src/main/java/edu/cnm/deepdive/toptag/model/dao)
 
-## [Database class]()
+## [Database Class](https://github.com/ddc-java-13/top-tag/tree/main/app/src/main/java/edu/cnm/deepdive/toptag/service)
 
-## []()
+## [Data Description Language](https://github.com/ddc-java-13/top-tag/tree/main/docs/sql)
+
