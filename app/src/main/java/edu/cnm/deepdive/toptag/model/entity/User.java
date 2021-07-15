@@ -9,8 +9,8 @@ import com.google.gson.annotations.Expose;
 
 @Entity(
     indices = {
-        @Index(value = {"user_name", "oauth_key"}, unique = true)
-
+        @Index(value = {"user_name"}, unique = true),
+        @Index(value = {"oauth_key"}, unique = true)
     }
 
 )
@@ -53,6 +53,5 @@ public class User {
     this.oauthKey = oauthKey;
   }
 
-//  @Transaction
 //  @Query("SELECT * FROM ")
 }

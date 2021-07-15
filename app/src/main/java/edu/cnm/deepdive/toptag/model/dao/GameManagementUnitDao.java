@@ -1,9 +1,11 @@
 package edu.cnm.deepdive.toptag.model.dao;
 
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.Query;
 import androidx.room.Update;
 import edu.cnm.deepdive.toptag.model.entity.ApplicationChoice;
 import edu.cnm.deepdive.toptag.model.entity.GameManagementUnit;
@@ -42,4 +44,12 @@ public interface GameManagementUnitDao {
   @Delete
   Single<Integer> delete(Collection<? extends GameManagementUnit> gameManagementUnits);
 
+  @Query("SELECT * FROM game_management_unit WHERE game_management_unit_id = :gameManagementUnitId")
+  LiveData<GameManagementUnit> selectById(long gameManagementUnitId);
+
+  @Query("SELECT * FROM game_management_unit WHERE unit_number = :unitNumber")
+  LiveData<GameManagementUnit> selectByUnitNumber(int unitNumber);
+
+  @Query("SELECT * FROM game_management_unit ORDER BY unit_number ASC ")
+  LiveData<List<GameManagementUnit>> selectAll();
 }

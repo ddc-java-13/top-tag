@@ -3,11 +3,18 @@ package edu.cnm.deepdive.toptag.model.entity;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverter;
+import androidx.room.TypeConverters;
 import java.util.Date;
 
 @Entity(
-    indices = {},
+    tableName = "application_choice",
+    indices = {
+        @Index(value = "season"),
+        @Index(value = "weapon_type")
+    },
     foreignKeys = {
         @ForeignKey(
             entity = User.class,
@@ -29,11 +36,13 @@ public class ApplicationChoice {
   @ColumnInfo(name = "application_choice_id")
   private String id;
 
-  private Date season;    /* TODO find better way to classify seas than date.*/
+  @ColumnInfo(name = "season_id")
+  private String season;    /* TODO find better way to classify season than date.*/
 
   @ColumnInfo(name = "user_id")
   private long userId;
 
+  @ColumnInfo(name = "weapon_type")
   private WeaponType weaponType;
 
   public String getId() {
@@ -44,11 +53,11 @@ public class ApplicationChoice {
     this.id = id;
   }
 
-  public Date getSeason() {
+  public String getSeason() {
     return season;
   }
 
-  public void setSeason(Date season) {
+  public void setSeason(String season) {
     this.season = season;
   }
 
@@ -60,8 +69,21 @@ public class ApplicationChoice {
     this.userId = userId;
   }
 
-  private enum WeaponType {
-    BOW, RIFLE
+  public enum WeaponType {
+    BOW, RIFLE;
+
+    @TypeConverter
+    public static Integer integerValue(WeaponType value) {
+
+      return (value != null) ? value.ordinal() : null;
+
+    }
+
+    @TypeConverter
+    public static WeaponType valueOf(Integer value) {
+
+      return (value != null) ? WeaponType.values()[value] : null;
+    }
   }
 
 }

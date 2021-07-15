@@ -1,8 +1,9 @@
 package edu.cnm.deepdive.toptag.model.entity;
 
 import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
+@Entity(tableName = "game_management_unit")
 public class GameManagementUnit {
 
   @PrimaryKey(autoGenerate = true)
@@ -82,4 +83,5 @@ public class GameManagementUnit {
   public void setTagsIssued(int tagsIssued) {
     this.tagsIssued = tagsIssued;
   }
+
 }
