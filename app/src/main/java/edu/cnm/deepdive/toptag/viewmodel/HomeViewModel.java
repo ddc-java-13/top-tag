@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.toptag.ui.home;
+package edu.cnm.deepdive.toptag.viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

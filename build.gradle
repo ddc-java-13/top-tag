@@ -28,3 +28,16 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+        // Add the Esri public Maven repository for Maps
+        maven {
+            url 'https://esri.jfrog.io/artifactory/arcgis'
+        }
+    }
+}
