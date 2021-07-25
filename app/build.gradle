@@ -35,10 +35,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
 
-        // Add the Esri public Maven repository for Maps
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
-
         //noinspection GroovyAssignabilityCheck
         buildFeatures {
             //noinspection GroovyAssignabilityCheck
@@ -48,9 +44,6 @@ android {
     }
 
     dependencies {
-
-        // Add the Esri public Maven repository for Maps
-        implementation 'com.esri.arcgisruntime:arcgis-android:100.11.2'
 
         // .jar-based libraries included in project
         implementation fileTree(dir: "libs", include: ["*.jar"])
