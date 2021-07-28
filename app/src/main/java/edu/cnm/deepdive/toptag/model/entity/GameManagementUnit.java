@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.toptag.model.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -10,21 +11,27 @@ public class GameManagementUnit {
   @ColumnInfo(name = "game_management_unit_id")
   private long id;
 
+  @NonNull
   @ColumnInfo(name = "unit_number", index = true)
   private int unitNumber;
 
+  @NonNull
   @ColumnInfo(name = "animal_name")
   private String animalName;
 
+  @NonNull
   @ColumnInfo(name = "herd_size")
   private int herdSize;
 
+  @NonNull
   @ColumnInfo(name = "harvest_number")
   private int harvestNumber;
 
+  @NonNull
   @ColumnInfo(name = "tag_applications")
   private int tagApplications;
 
+  @NonNull
   @ColumnInfo(name = "tags_issued")
   private int tagsIssued;
 

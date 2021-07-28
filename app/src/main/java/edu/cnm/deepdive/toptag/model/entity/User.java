@@ -20,11 +20,12 @@ public class User {
   @ColumnInfo(name = "user_id")
   private long id;
 
-  @ColumnInfo(name = "user_name")
   @NonNull
+  @ColumnInfo(name = "user_name")
   private String userName;
 
   @ColumnInfo(name = "oauth_key")
+  @NonNull
   private String oauthKey;
 
 

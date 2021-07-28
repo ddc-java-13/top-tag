@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.toptag.model.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -33,18 +34,23 @@ public class ApplicationChoice {
   @ColumnInfo(name = "application_choice_id")
   private long id;
 
+  @NonNull
   @ColumnInfo(name = "game_management_unit_id", index = true)
   private long  gameManagementUnitId;
 
+  @NonNull
   @ColumnInfo(index = true)
   private String season;    /* TODO find better way to classify season than date.*/
 
+  @NonNull
   @ColumnInfo(name = "user_id", index = true)
   private long userId;
 
+  @NonNull
   @ColumnInfo(name = "weapon_type", index = true)
   private WeaponType weaponType;
 
+  @NonNull
   public long getGameManagementUnitId() {
     return gameManagementUnitId;
   }
