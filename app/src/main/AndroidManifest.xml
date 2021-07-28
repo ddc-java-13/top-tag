@@ -12,10 +12,6 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme"
     tools:ignore="AllowBackup">
-    <activity
-      android:label="@string/title_activity_main_activity"
-      android:name=".MainActivityActivity">
-    </activity>
     <activity android:name=".controller.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
