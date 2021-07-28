@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">Top Tag</string>
+  <string name="title_activity_main_activity">MainActivity</string>
+  <string name="title_map">Map</string>
+  <string name="title_hunt">Hunt</string>
+  <string name="title_data">Data</string>
 </resources>
