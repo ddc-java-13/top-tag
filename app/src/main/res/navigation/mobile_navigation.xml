@@ -22,4 +22,12 @@
     android:label="@string/title_data"
     android:name="edu.cnm.deepdive.toptag.controller.NotificationsFragment"
     tools:layout="@layout/fragment_notifications"/>
+
+  <fragment
+    android:id="@+id/navigation_map"
+    android:label="Map"
+    android:name="edu.cnm.deepdive.toptag.controller.MapFragment"
+    tools:layout="@layout/fragment_map"/>
+
+
 </navigation>

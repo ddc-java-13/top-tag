@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "79ea82c1dd2faf1bc4bcf502be5e679a",
+    "identityHash": "f03dcb12e320c919e3a0fee3e363fe58",
     "entities": [
       {
         "tableName": "game_management_unit",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`game_management_unit_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `unit_number` INTEGER NOT NULL, `animal_name` TEXT, `herd_size` INTEGER NOT NULL, `harvest_number` INTEGER NOT NULL, `tag_applications` INTEGER NOT NULL, `tags_issued` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`game_management_unit_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `unit_number` INTEGER NOT NULL, `animal_name` TEXT NOT NULL, `herd_size` INTEGER NOT NULL, `harvest_number` INTEGER NOT NULL, `tag_applications` INTEGER NOT NULL, `tags_issued` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -24,7 +24,7 @@
             "fieldPath": "animalName",
             "columnName": "animal_name",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "herdSize",
@@ -71,7 +71,7 @@
       },
       {
         "tableName": "application_choice",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`application_choice_id` INTEGER NOT NULL, `game_management_unit_id` INTEGER NOT NULL, `season` TEXT, `user_id` INTEGER NOT NULL, `weapon_type` INTEGER, PRIMARY KEY(`application_choice_id`), FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`game_management_unit_id`) REFERENCES `game_management_unit`(`game_management_unit_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`application_choice_id` INTEGER NOT NULL, `game_management_unit_id` INTEGER NOT NULL, `season` TEXT NOT NULL, `user_id` INTEGER NOT NULL, `weapon_type` INTEGER NOT NULL, PRIMARY KEY(`application_choice_id`), FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`game_management_unit_id`) REFERENCES `game_management_unit`(`game_management_unit_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -89,7 +89,7 @@
             "fieldPath": "season",
             "columnName": "season",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "userId",
@@ -101,7 +101,7 @@
             "fieldPath": "weaponType",
             "columnName": "weapon_type",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -171,7 +171,7 @@
       },
       {
         "tableName": "User",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_name` TEXT NOT NULL, `oauth_key` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_name` TEXT NOT NULL, `oauth_key` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -189,7 +189,7 @@
             "fieldPath": "oauthKey",
             "columnName": "oauth_key",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -222,7 +222,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '79ea82c1dd2faf1bc4bcf502be5e679a')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f03dcb12e320c919e3a0fee3e363fe58')"
     ]
   }
 }
