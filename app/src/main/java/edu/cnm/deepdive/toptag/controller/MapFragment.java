@@ -37,7 +37,7 @@ public class MapFragment extends Fragment {
     public void onMapReady(GoogleMap googleMap) {
       LatLng albuquerque = new LatLng(35.08209, -106.95667);
       googleMap.addMarker(new MarkerOptions().position(albuquerque).title("Albuquerque"));
-      googleMap.moveCamera(CameraUpdateFactory.newLatLng(albuquerque));
+      googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(albuquerque, 7));
       try {
         KmlLayer layer = new KmlLayer(googleMap, R.raw.gmu, getContext());
         layer.addLayerToMap();
