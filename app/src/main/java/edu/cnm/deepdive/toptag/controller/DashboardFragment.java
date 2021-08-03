@@ -11,24 +11,33 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import edu.cnm.deepdive.toptag.R;
+import edu.cnm.deepdive.toptag.databinding.FragmentDashboardBinding;
 import edu.cnm.deepdive.toptag.viewmodel.DashboardViewModel;
 
 public class DashboardFragment extends Fragment {
+
+  private FragmentDashboardBinding binding;
 
   private DashboardViewModel dashboardViewModel;
 
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
+    binding = FragmentDashboardBinding.inflate(inflater, container, false);
+    binding.bowSelect.setOnClickListener((v) -> {
+      boolean input = true;
+    });
     dashboardViewModel =
         new ViewModelProvider(this).get(DashboardViewModel.class);
     View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-    final TextView textView = root.findViewById(R.id.text_dashboard);
+    final TextView textView = root.findViewById(R.id.text_rifle_season2);
     dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
       @Override
       public void onChanged(@Nullable String s) {
         textView.setText(s);
       }
     });
+
+
     return root;
   }
 }
