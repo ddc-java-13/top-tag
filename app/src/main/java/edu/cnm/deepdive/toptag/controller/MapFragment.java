@@ -1,5 +1,6 @@
 package edu.cnm.deepdive.toptag.controller;
 
+import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -49,7 +50,9 @@ public class MapFragment extends Fragment {
       try {
         KmlLayer layer = new KmlLayer(googleMap, R.raw.gmu, getContext());
         layer.addLayerToMap();
-
+        layer.setOnFeatureClickListener((feature) -> {
+          Log.d(getClass().getName(),"feature clicked" + feature.getId());
+        });
       } catch (XmlPullParserException | IOException e) {
         throw new RuntimeException(e);
       }

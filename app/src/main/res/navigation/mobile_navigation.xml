@@ -12,12 +12,6 @@
     tools:layout="@layout/fragment_map"/>
 
   <fragment
-    android:id="@+id/navigation_home"
-    android:label="@string/title_map"
-    android:name="edu.cnm.deepdive.toptag.controller.HomeFragment"
-    tools:layout="@layout/fragment_home"/>
-
-  <fragment
     android:id="@+id/navigation_dashboard"
     android:label="@string/title_hunt"
     android:name="edu.cnm.deepdive.toptag.controller.DashboardFragment"
