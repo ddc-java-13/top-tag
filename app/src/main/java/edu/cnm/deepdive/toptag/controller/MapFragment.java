@@ -22,7 +22,11 @@ import org.xmlpull.v1.XmlPullParserException;
 
 public class MapFragment extends Fragment {
 
+
+
   private OnMapReadyCallback callback = new OnMapReadyCallback() {
+
+
 
     /**
      * Manipulates the map once available.
@@ -35,12 +39,17 @@ public class MapFragment extends Fragment {
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+
       LatLng albuquerque = new LatLng(35.08209, -106.95667);
+
+      googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
       googleMap.addMarker(new MarkerOptions().position(albuquerque).title("Albuquerque"));
       googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(albuquerque, 7));
       try {
         KmlLayer layer = new KmlLayer(googleMap, R.raw.gmu, getContext());
         layer.addLayerToMap();
+
       } catch (XmlPullParserException | IOException e) {
         throw new RuntimeException(e);
       }
