@@ -94,6 +94,7 @@ public class ApplicationChoice {
   public enum WeaponType {
     BOW, RIFLE;
 
+
     @TypeConverter
     public static Integer integerValue(WeaponType value) {
 

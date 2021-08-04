@@ -14,7 +14,7 @@
   <fragment
     android:id="@+id/navigation_dashboard"
     android:label="@string/title_hunt"
-    android:name="edu.cnm.deepdive.toptag.controller.DashboardFragment"
+    android:name="edu.cnm.deepdive.toptag.controller.HuntFragment"
     tools:layout="@layout/fragment_dashboard"/>
 
   <fragment
