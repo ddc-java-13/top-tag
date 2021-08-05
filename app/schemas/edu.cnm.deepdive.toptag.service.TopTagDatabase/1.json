@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "f03dcb12e320c919e3a0fee3e363fe58",
+    "identityHash": "9d70296ed9984914292d7597227a81a0",
     "entities": [
       {
         "tableName": "game_management_unit",
@@ -170,6 +170,95 @@
         ]
       },
       {
+        "tableName": "hunt_data",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hunt_data_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `created` INTEGER NOT NULL, `unit` TEXT, `tag` INTEGER, `application` INTEGER, `bow` INTEGER NOT NULL, `rifle` INTEGER NOT NULL, `septEarly` INTEGER NOT NULL, `septLate` INTEGER NOT NULL, `octEarly` INTEGER NOT NULL, `octLate` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "hunt_data_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unit",
+            "columnName": "unit",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tag",
+            "columnName": "tag",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "application",
+            "columnName": "application",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bow",
+            "columnName": "bow",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rifle",
+            "columnName": "rifle",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "septEarly",
+            "columnName": "septEarly",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "septLate",
+            "columnName": "septLate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "octEarly",
+            "columnName": "octEarly",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "octLate",
+            "columnName": "octLate",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "hunt_data_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_hunt_data_created",
+            "unique": false,
+            "columnNames": [
+              "created"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_hunt_data_created` ON `${TABLE_NAME}` (`created`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
         "tableName": "User",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_name` TEXT NOT NULL, `oauth_key` TEXT NOT NULL)",
         "fields": [
@@ -222,7 +311,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f03dcb12e320c919e3a0fee3e363fe58')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9d70296ed9984914292d7597227a81a0')"
     ]
   }
 }

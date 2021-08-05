@@ -16,15 +16,16 @@ public class TopTagApplication extends Application {
   public void onCreate() {
     super.onCreate();
 
+    Stetho.initializeWithDefaults(this);
+
     TopTagDatabase.setContext(this);
     TopTagDatabase
         .getInstance()
-        .getApplicationChoiceDao()
+        .getHuntDataDao()
         .delete()
         .subscribeOn(Schedulers.io())
         .subscribe();
 
-    Stetho.initializeWithDefaults(this);
   }
 
 }

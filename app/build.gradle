@@ -105,6 +105,9 @@ android {
         annotationProcessor "androidx.room:room-compiler:$roomVersion"
         implementation "androidx.room:room-rxjava2:$roomVersion"
 
+        // CSV library
+        implementation 'org.apache.commons:commons-csv:1.8'
+
         // Gson (Google JSON parser) dependency
         implementation 'com.google.code.gson:gson:2.8.7'
 
