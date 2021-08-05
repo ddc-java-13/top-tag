@@ -5,8 +5,10 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.toptag.model.entity.HuntData;
+import edu.cnm.deepdive.toptag.model.pojo.HuntInfo;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -40,8 +42,9 @@ public interface HuntDataDao {
 
   @Delete
   Single<Integer> delete(Collection<? extends HuntData> huntsData);
-  
-//  @Query("SELECT * FROM hunt_data ORDER BY created ASC ")
-//  LiveData<List<HuntData>> selectAll();
+
+  @Query("SELECT * FROM hunt_data ORDER BY unit ASC ")
+  LiveData<List<HuntData>> selectUnit();
+
 
 }

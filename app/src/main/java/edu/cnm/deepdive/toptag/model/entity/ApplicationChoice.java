@@ -38,13 +38,14 @@ public class ApplicationChoice {
   @ColumnInfo(name = "game_management_unit_id", index = true)
   private long  gameManagementUnitId;
 
-  @NonNull
-  @ColumnInfo(index = true)
-  private String season;    /* TODO find better way to classify season than date.*/
 
   @NonNull
   @ColumnInfo(name = "user_id", index = true)
   private long userId;
+
+  @NonNull
+  @ColumnInfo(name = "season_type", index = true)
+  private SeasonType seasonType;                       /* TODO find better way to classify season than date.*/
 
   @NonNull
   @ColumnInfo(name = "weapon_type", index = true)
@@ -67,13 +68,13 @@ public class ApplicationChoice {
     this.id = id;
   }
 
-  public String getSeason() {
-    return season;
-  }
-
-  public void setSeason(String season) {
-    this.season = season;
-  }
+//  public String getSeason() {
+//    return season;
+//  }
+//
+//  public void setSeason(String season) {
+//    this.season = season;
+//  }
 
   public long getUserId() {
     return userId;
@@ -83,6 +84,15 @@ public class ApplicationChoice {
     this.userId = userId;
   }
 
+  @NonNull
+  public SeasonType getSeasonType() {
+    return seasonType;
+  }
+
+  public void setSeasonType(@NonNull SeasonType seasonType) {
+    this.seasonType = seasonType;
+  }
+
   public WeaponType getWeaponType() {
     return weaponType;
   }
@@ -90,6 +100,24 @@ public class ApplicationChoice {
   public void setWeaponType(WeaponType weaponType) {
     this.weaponType = weaponType;
   }
+
+  public enum SeasonType {
+    SEPT_EARLY, SEPT_LATE, OCT_EARLY, OCT_LATE;
+
+    @TypeConverter
+    public static Integer integerValue(SeasonType value) {
+
+      return (value != null) ? value.ordinal() : null;
+    }
+
+    @TypeConverter
+    public static SeasonType valueOf(Integer value) {
+
+      return (value != null) ? SeasonType.values()[value] : null;
+    }
+
+  }
+
 
   public enum WeaponType {
     BOW, RIFLE;

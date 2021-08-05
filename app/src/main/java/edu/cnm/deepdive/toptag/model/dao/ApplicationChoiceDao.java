@@ -7,6 +7,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 import edu.cnm.deepdive.toptag.model.entity.ApplicationChoice;
+import edu.cnm.deepdive.toptag.model.entity.ApplicationChoice.SeasonType;
 import edu.cnm.deepdive.toptag.model.entity.ApplicationChoice.WeaponType;
 import edu.cnm.deepdive.toptag.model.entity.GameManagementUnit;
 import io.reactivex.Single;
@@ -46,8 +47,8 @@ public interface ApplicationChoiceDao {
   @Query("SELECT * FROM application_choice WHERE application_choice_id = :applicationChoice")
   LiveData<ApplicationChoice> select(String applicationChoice);
 
-  @Query("SELECT * FROM application_choice WHERE season = :season")
-  LiveData<ApplicationChoice> selectBySeason(String season);
+  @Query("SELECT * FROM application_choice WHERE season_type = :seasonType")
+  LiveData<ApplicationChoice> selectBySeason(SeasonType seasonType);
 
   @Query("SELECT * FROM application_choice WHERE weapon_type = :weaponType")
   LiveData<ApplicationChoice> selectByWeapon(WeaponType weaponType);
