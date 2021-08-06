@@ -118,7 +118,6 @@ public class ApplicationChoice {
 
   }
 
-
   public enum WeaponType {
     BOW, RIFLE;
 

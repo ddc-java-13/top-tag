@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "67af078e12350e53f94f4848ee1b4de6",
+    "identityHash": "90539413e57d8a0551d968ab22e1cd0a",
     "entities": [
       {
         "tableName": "game_management_unit",
@@ -153,7 +153,7 @@
       },
       {
         "tableName": "hunt_data",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hunt_data_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `created` INTEGER NOT NULL, `unit` TEXT, `tag` INTEGER, `application` INTEGER, `bow` INTEGER NOT NULL, `rifle` INTEGER NOT NULL, `septEarly` INTEGER NOT NULL, `septLate` INTEGER NOT NULL, `octEarly` INTEGER NOT NULL, `octLate` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hunt_data_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `created` INTEGER NOT NULL, `unit` TEXT, `tag` INTEGER, `application` INTEGER, `bow` INTEGER, `rifle` INTEGER, `septEarly` INTEGER, `septLate` INTEGER, `octEarly` INTEGER, `octLate` INTEGER)",
         "fields": [
           {
             "fieldPath": "id",
@@ -189,37 +189,37 @@
             "fieldPath": "bow",
             "columnName": "bow",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "rifle",
             "columnName": "rifle",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "septEarly",
             "columnName": "septEarly",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "septLate",
             "columnName": "septLate",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "octEarly",
             "columnName": "octEarly",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "octLate",
             "columnName": "octLate",
             "affinity": "INTEGER",
-            "notNull": true
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -293,7 +293,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '67af078e12350e53f94f4848ee1b4de6')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '90539413e57d8a0551d968ab22e1cd0a')"
     ]
   }
 }

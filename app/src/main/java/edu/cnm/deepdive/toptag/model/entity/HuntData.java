@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import edu.cnm.deepdive.toptag.model.entity.ApplicationChoice.WeaponType;
 import java.util.Date;
 
 @Entity(tableName = "hunt_data")
@@ -23,17 +24,17 @@ public class HuntData {
 
   private Integer application;
 
-  private boolean bow;
+  private Boolean bow;
 
-  private boolean rifle;
+  private Boolean rifle;
 
-  private boolean septEarly;
+  private Boolean septEarly;
 
-  private boolean septLate;
+  private Boolean septLate;
 
-  private boolean octEarly;
+  private Boolean octEarly;
 
-  private boolean octLate;
+  private Boolean octLate;
 
   public long getId() {
     return id;
@@ -76,51 +77,51 @@ public class HuntData {
     this.application = application;
   }
 
-  public boolean isBow() {
+  public Boolean getBow() {
     return bow;
   }
 
-  public void setBow(boolean bow) {
+  public void setBow(Boolean bow) {
     this.bow = bow;
   }
 
-  public boolean isRifle() {
+  public Boolean getRifle() {
     return rifle;
   }
 
-  public void setRifle(boolean rifle) {
+  public void setRifle(Boolean rifle) {
     this.rifle = rifle;
   }
 
-  public boolean isSeptEarly() {
+  public Boolean getSeptEarly() {
     return septEarly;
   }
 
-  public void setSeptEarly(boolean septEarly) {
+  public void setSeptEarly(Boolean septEarly) {
     this.septEarly = septEarly;
   }
 
-  public boolean isSeptLate() {
+  public Boolean getSeptLate() {
     return septLate;
   }
 
-  public void setSeptLate(boolean septLate) {
+  public void setSeptLate(Boolean septLate) {
     this.septLate = septLate;
   }
 
-  public boolean isOctEarly() {
+  public Boolean getOctEarly() {
     return octEarly;
   }
 
-  public void setOctEarly(boolean octEarly) {
+  public void setOctEarly(Boolean octEarly) {
     this.octEarly = octEarly;
   }
 
-  public boolean isOctLate() {
+  public Boolean getOctLate() {
     return octLate;
   }
 
-  public void setOctLate(boolean octLate) {
+  public void setOctLate(Boolean octLate) {
     this.octLate = octLate;
   }
 }

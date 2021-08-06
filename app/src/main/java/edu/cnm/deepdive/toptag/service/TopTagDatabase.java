@@ -15,6 +15,7 @@ import edu.cnm.deepdive.toptag.model.dao.GameManagementUnitDao;
 import edu.cnm.deepdive.toptag.model.dao.HuntDataDao;
 import edu.cnm.deepdive.toptag.model.dao.UserDao;
 import edu.cnm.deepdive.toptag.model.entity.ApplicationChoice;
+import edu.cnm.deepdive.toptag.model.entity.ApplicationChoice.SeasonType;
 import edu.cnm.deepdive.toptag.model.entity.ApplicationChoice.WeaponType;
 import edu.cnm.deepdive.toptag.model.entity.GameManagementUnit;
 import edu.cnm.deepdive.toptag.model.entity.HuntData;
@@ -126,6 +127,9 @@ public abstract class TopTagDatabase extends RoomDatabase {
 
 
   public static class Converters {
+
+
+
 
     @TypeConverter
     public static Long toLong(Date value) {         /*convert from date to something SQLite db can store.  Second conversion back to date*/

@@ -44,9 +44,6 @@ public interface ApplicationChoiceDao {
   @Delete
   Single<Integer> delete(Collection<? extends ApplicationChoice> applicationChoices);
 
-  @Query("SELECT * FROM application_choice WHERE application_choice_id = :applicationChoice")
-  LiveData<ApplicationChoice> select(String applicationChoice);
-
   @Query("SELECT * FROM application_choice WHERE season_type = :seasonType")
   LiveData<ApplicationChoice> selectBySeason(SeasonType seasonType);
 
