@@ -64,7 +64,7 @@ public class ApplicationAdapter extends RecyclerView.Adapter<Holder>{
       binding.tag.setText(String.valueOf(huntData.getTag()));
       binding.application.setText(String.valueOf(huntData.getApplication()));
       double odds = (double)huntData.getTag() / huntData.getApplication();
-      DecimalFormat df = new DecimalFormat("#.##");
+      DecimalFormat df = new DecimalFormat("#" +'%');
       binding.percentage.setText(df.format(odds));
 
 
