@@ -1,6 +1,16 @@
 apply plugin: 'com.android.application'
 apply plugin: 'androidx.navigation.safeargs'
 
+static def getProperty(String filename, String property) {
+    Properties properties = new Properties()
+    properties.load(new FileInputStream(filename))
+    return properties.getProperty(property)
+}
+
+static def quoted(String value) {
+    return "\"${value}\""
+}
+
 android {
 
     compileSdkVersion = 30
@@ -13,6 +23,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        def connectionProperties = "$projectDir/../../../services/top-tag.properties"
+
+        resValue "string", "google_maps_key", getProperty(connectionProperties, "google_maps_key")
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -49,19 +63,19 @@ android {
         implementation fileTree(dir: "libs", include: ["*.jar"])
 
         // Basic Jetpack support
-        implementation 'androidx.core:core:1.3.2'
-        implementation 'androidx.media:media:1.3.1'
+        implementation 'androidx.core:core:1.6.0'
+        implementation 'androidx.media:media:1.4.0'
         implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
         implementation 'androidx.legacy:legacy-support-core-ui:1.0.0'
-        implementation 'androidx.appcompat:appcompat:1.2.0'
+        implementation 'androidx.appcompat:appcompat:1.3.1'
 
         // Basic Android components
         implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-        implementation "androidx.recyclerview:recyclerview:1.2.0"
+        implementation "androidx.recyclerview:recyclerview:1.2.1"
         implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
 
         // Fragment & navigation dependencies
-        implementation 'androidx.fragment:fragment:1.3.3'
+        implementation 'androidx.fragment:fragment:1.3.6'
         implementation "androidx.navigation:navigation-fragment:$navigationVersion"
         implementation "androidx.navigation:navigation-ui:$navigationVersion"
         implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
@@ -75,7 +89,11 @@ android {
         implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
 
         // Material Design components
-        implementation 'com.google.android.material:material:1.3.0'
+        implementation 'com.google.android.material:material:1.4.0'
+
+        // Google Maps libraries
+        implementation 'com.google.android.gms:play-services-maps:17.0.1'
+        implementation 'com.google.maps.android:android-maps-utils:2.2.3'
 
         // ReactiveX dependencies
         implementation 'io.reactivex.rxjava2:rxjava:2.2.20'
@@ -87,8 +105,11 @@ android {
         annotationProcessor "androidx.room:room-compiler:$roomVersion"
         implementation "androidx.room:room-rxjava2:$roomVersion"
 
+        // CSV library
+        implementation 'org.apache.commons:commons-csv:1.8'
+
         // Gson (Google JSON parser) dependency
-        implementation 'com.google.code.gson:gson:2.8.6'
+        implementation 'com.google.code.gson:gson:2.8.7'
 
         // Retrofit (REST client) with ReactiveX & Gson integration
         def retrofitVersion = '2.9.0'
@@ -103,8 +124,9 @@ android {
         implementation 'com.facebook.stetho:stetho:1.5.1'
 
         testImplementation 'junit:junit:4.13.2'
-        androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-        androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     }
 }
+

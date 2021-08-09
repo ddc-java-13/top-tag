@@ -4,4 +4,28 @@
   <string name="title_map">Map</string>
   <string name="title_hunt">Hunt</string>
   <string name="title_data">Data</string>
+  <string name="navigation_map">Map</string>
+  <string name="date">Date</string>
+  <string name="weapon">Weapon</string>
+  <string name="weapon_select">Weapon Select</string>
+  <string name="season_select">Season Select</string>
+  <string name="unit">Unit</string>
+  <string name="tag">Tag</string>
+  <string name="app">App</string>
+  <string name="odds">Odds</string>
+  <string name="value_format">"%02d"</string>
+
+  <string-array name="weapon_choices">
+    <item>All</item>
+    <item>Archery</item>
+    <item>Rifle</item>
+  </string-array>
+
+  <string-array name="season_choices">
+    <item>All</item>
+    <item>Sept Early</item>
+    <item>Sept Late</item>
+    <item>Oct Early</item>
+    <item>Oct Late</item>
+  </string-array>
 </resources>

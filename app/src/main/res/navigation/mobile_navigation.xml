@@ -3,23 +3,26 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/mobile_navigation"
-  app:startDestination="@+id/navigation_home">
+  app:startDestination="@+id/navigation_map">
 
   <fragment
-    android:id="@+id/navigation_home"
-    android:label="@string/title_map"
-    android:name="edu.cnm.deepdive.toptag.controller.HomeFragment"
-    tools:layout="@layout/fragment_home"/>
+    android:id="@+id/navigation_map"
+    android:label="Map"
+    android:name="edu.cnm.deepdive.toptag.controller.MapFragment"
+    tools:layout="@layout/fragment_map"/>
 
   <fragment
     android:id="@+id/navigation_dashboard"
     android:label="@string/title_hunt"
-    android:name="edu.cnm.deepdive.toptag.controller.DashboardFragment"
-    tools:layout="@layout/fragment_dashboard"/>
+    android:name="edu.cnm.deepdive.toptag.controller.HuntFragment"
+    tools:layout="@layout/fragment_hunt"/>
 
   <fragment
     android:id="@+id/navigation_notifications"
     android:label="@string/title_data"
     android:name="edu.cnm.deepdive.toptag.controller.NotificationsFragment"
     tools:layout="@layout/fragment_notifications"/>
+
+
+
 </navigation>

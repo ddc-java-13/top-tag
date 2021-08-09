@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "79ea82c1dd2faf1bc4bcf502be5e679a",
+    "identityHash": "7d92103b17fc422c62fca4b9ab7bdd9f",
     "entities": [
       {
         "tableName": "game_management_unit",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`game_management_unit_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `unit_number` INTEGER NOT NULL, `animal_name` TEXT, `herd_size` INTEGER NOT NULL, `harvest_number` INTEGER NOT NULL, `tag_applications` INTEGER NOT NULL, `tags_issued` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`game_management_unit_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `unit_number` INTEGER NOT NULL, `tag_applications` INTEGER NOT NULL, `tags_issued` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -17,24 +17,6 @@
           {
             "fieldPath": "unitNumber",
             "columnName": "unit_number",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "animalName",
-            "columnName": "animal_name",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "herdSize",
-            "columnName": "herd_size",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "harvestNumber",
-            "columnName": "harvest_number",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -71,7 +53,7 @@
       },
       {
         "tableName": "application_choice",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`application_choice_id` INTEGER NOT NULL, `game_management_unit_id` INTEGER NOT NULL, `season` TEXT, `user_id` INTEGER NOT NULL, `weapon_type` INTEGER, PRIMARY KEY(`application_choice_id`), FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`game_management_unit_id`) REFERENCES `game_management_unit`(`game_management_unit_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`application_choice_id` INTEGER NOT NULL, `game_management_unit_id` INTEGER NOT NULL, `user_id` INTEGER NOT NULL, `season_type` TEXT NOT NULL, `weapon_type` INTEGER NOT NULL, PRIMARY KEY(`application_choice_id`), FOREIGN KEY(`user_id`) REFERENCES `User`(`user_id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`game_management_unit_id`) REFERENCES `game_management_unit`(`game_management_unit_id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -86,22 +68,22 @@
             "notNull": true
           },
           {
-            "fieldPath": "season",
-            "columnName": "season",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
             "fieldPath": "userId",
             "columnName": "user_id",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
+            "fieldPath": "seasonType",
+            "columnName": "season_type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
             "fieldPath": "weaponType",
             "columnName": "weapon_type",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -120,20 +102,20 @@
             "createSql": "CREATE INDEX IF NOT EXISTS `index_application_choice_game_management_unit_id` ON `${TABLE_NAME}` (`game_management_unit_id`)"
           },
           {
-            "name": "index_application_choice_season",
-            "unique": false,
-            "columnNames": [
-              "season"
-            ],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_application_choice_season` ON `${TABLE_NAME}` (`season`)"
-          },
-          {
             "name": "index_application_choice_user_id",
             "unique": false,
             "columnNames": [
               "user_id"
             ],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_application_choice_user_id` ON `${TABLE_NAME}` (`user_id`)"
+          },
+          {
+            "name": "index_application_choice_season_type",
+            "unique": false,
+            "columnNames": [
+              "season_type"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_application_choice_season_type` ON `${TABLE_NAME}` (`season_type`)"
           },
           {
             "name": "index_application_choice_weapon_type",
@@ -170,8 +152,97 @@
         ]
       },
       {
+        "tableName": "hunt_data",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hunt_data_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `created` INTEGER NOT NULL, `unit` TEXT, `tag` INTEGER, `application` INTEGER, `bow` INTEGER, `rifle` INTEGER, `sept_early` INTEGER, `sept_late` INTEGER, `oct_early` INTEGER, `oct_late` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "hunt_data_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created",
+            "columnName": "created",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unit",
+            "columnName": "unit",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tag",
+            "columnName": "tag",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "application",
+            "columnName": "application",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bow",
+            "columnName": "bow",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rifle",
+            "columnName": "rifle",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "septEarly",
+            "columnName": "sept_early",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "septLate",
+            "columnName": "sept_late",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "octEarly",
+            "columnName": "oct_early",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "octLate",
+            "columnName": "oct_late",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "hunt_data_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_hunt_data_created",
+            "unique": false,
+            "columnNames": [
+              "created"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_hunt_data_created` ON `${TABLE_NAME}` (`created`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
         "tableName": "User",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_name` TEXT NOT NULL, `oauth_key` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user_name` TEXT NOT NULL, `oauth_key` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -189,7 +260,7 @@
             "fieldPath": "oauthKey",
             "columnName": "oauth_key",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -222,7 +293,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '79ea82c1dd2faf1bc4bcf502be5e679a')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7d92103b17fc422c62fca4b9ab7bdd9f')"
     ]
   }
 }
