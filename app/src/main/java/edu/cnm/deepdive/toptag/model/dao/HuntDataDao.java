@@ -46,5 +46,14 @@ public interface HuntDataDao {
   @Query("SELECT * FROM hunt_data ORDER BY unit ASC ")
   LiveData<List<HuntData>> selectUnit();
 
+  @Query("SELECT * FROM hunt_data "
+      + "WHERE bow = IFNULL(:bow, bow) "
+      + "AND rifle = IFNULL(:rifle, rifle) "
+      + "AND sept_early = IFNULL(:septEarly, sept_early) "
+      + "AND sept_late = IFNULL(:septLate, sept_late) "
+      + "AND oct_early = IFNULL(:octEarly, oct_early) "
+      + "AND oct_late = IFNULL(:octLate, oct_late) "
+      + "ORDER BY unit ASC")
+  LiveData<List<HuntData>> selectFiltered(Boolean bow, Boolean rifle, Boolean septEarly, Boolean septLate, Boolean octEarly, Boolean octLate);
 
 }

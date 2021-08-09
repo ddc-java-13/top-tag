@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "90539413e57d8a0551d968ab22e1cd0a",
+    "identityHash": "7d92103b17fc422c62fca4b9ab7bdd9f",
     "entities": [
       {
         "tableName": "game_management_unit",
@@ -153,7 +153,7 @@
       },
       {
         "tableName": "hunt_data",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hunt_data_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `created` INTEGER NOT NULL, `unit` TEXT, `tag` INTEGER, `application` INTEGER, `bow` INTEGER, `rifle` INTEGER, `septEarly` INTEGER, `septLate` INTEGER, `octEarly` INTEGER, `octLate` INTEGER)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hunt_data_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `created` INTEGER NOT NULL, `unit` TEXT, `tag` INTEGER, `application` INTEGER, `bow` INTEGER, `rifle` INTEGER, `sept_early` INTEGER, `sept_late` INTEGER, `oct_early` INTEGER, `oct_late` INTEGER)",
         "fields": [
           {
             "fieldPath": "id",
@@ -199,25 +199,25 @@
           },
           {
             "fieldPath": "septEarly",
-            "columnName": "septEarly",
+            "columnName": "sept_early",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
             "fieldPath": "septLate",
-            "columnName": "septLate",
+            "columnName": "sept_late",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
             "fieldPath": "octEarly",
-            "columnName": "octEarly",
+            "columnName": "oct_early",
             "affinity": "INTEGER",
             "notNull": false
           },
           {
             "fieldPath": "octLate",
-            "columnName": "octLate",
+            "columnName": "oct_late",
             "affinity": "INTEGER",
             "notNull": false
           }
@@ -293,7 +293,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '90539413e57d8a0551d968ab22e1cd0a')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7d92103b17fc422c62fca4b9ab7bdd9f')"
     ]
   }
 }

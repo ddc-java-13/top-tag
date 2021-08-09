@@ -28,12 +28,16 @@ public class HuntData {
 
   private Boolean rifle;
 
+  @ColumnInfo(name = "sept_early")
   private Boolean septEarly;
 
+  @ColumnInfo(name = "sept_late")
   private Boolean septLate;
 
+  @ColumnInfo(name = "oct_early")
   private Boolean octEarly;
 
+  @ColumnInfo(name = "oct_late")
   private Boolean octLate;
 
   public long getId() {
