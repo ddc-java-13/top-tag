@@ -6,7 +6,9 @@ order: 40
 ---
 
 
-## Jetpack, Room, Material Design, ReactiveX, Gson, Squareup.retrofit2, Squareup.okhttp3
+## Apache 2.0
+
+#### Jetpack, Room, Material Design, ReactiveX, Gson, Squareup.retrofit2, Squareup.okhttp3
 
 Copyright 2021 Lee Scroggins
 
@@ -23,9 +25,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 
-## Stecho
+## MIT License
 
-IT License
+#### Stetho
+
+MIT License
 
 Copyright (c) Facebook, Inc. and its affiliates.
 
@@ -48,7 +52,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## Google Maps
+## Google Maps Platform License Agreement
+
+#### Google Maps
 
 Google Maps Platform License Agreement
 
