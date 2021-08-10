@@ -1,6 +1,6 @@
 ---
-title: Entity-Relationship Diagram
-subtitle: "Entity Classes, Data Access Objects, Database Classes, Data Description Language"
+title: Data Links
+subtitle: "Entity Classes, Data Access Objects, Database Classes, Data Description Language, and Generated Javadocs"
 menu: Links
 order: 30
 ---
@@ -15,4 +15,6 @@ order: 30
 ## [Repository Class](https://github.com/ddc-java-13/top-tag/blob/main/app/src/main/java/edu/cnm/deepdive/toptag/service/TopTagRepository.java)
 
 ## [Data Description Language](ddl.md)
+
+## [Generated Javadocs](api/index.html)
 
