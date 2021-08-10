@@ -5,7 +5,7 @@ menu: Wireframe
 order: 10
 ---
 
-## Wireframe Placeholder
+## Wireframe 
 
 
 ![Top Tag Wireframe](img/wireframe.png)

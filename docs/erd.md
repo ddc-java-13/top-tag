@@ -5,7 +5,7 @@ menu: ERD
 order: 20
 ---
 
-## ERD Placeholder
+## ERD 
 
 
 [![Top Tag Wireframe](img/erd.png)](pdf/erd.pdf)
