@@ -13,6 +13,9 @@ import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Interface for CRUD. Inserts/Deletes queries Game Management Unit entity data.
+ */
 @Dao
 public interface GameManagementUnitDao {
 

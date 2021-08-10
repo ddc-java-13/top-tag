@@ -13,10 +13,20 @@ import androidx.lifecycle.ViewModelProvider;
 import edu.cnm.deepdive.toptag.R;
 import edu.cnm.deepdive.toptag.viewmodel.NotificationsViewModel;
 
+/**
+ * Inflates the notes fragment to the viewmodel.
+ */
 public class NotesFragment extends Fragment {
 
   private NotificationsViewModel notificationsViewModel;
 
+  /**
+   * Inflates to container.
+   * @param inflater
+   * @param container
+   * @param savedInstanceState
+   * @return  returns layout.
+   */
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
     notificationsViewModel =

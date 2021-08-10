@@ -14,6 +14,10 @@ import com.google.gson.annotations.Expose;
     }
 
 )
+/**
+ *
+ * annotates user as an entity class
+ */
 public class User {
 
   @PrimaryKey(autoGenerate = true)
@@ -29,29 +33,51 @@ public class User {
   private String oauthKey;
 
 
-
-
+  /**
+   * gets user id
+   * @return id
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   * sets user id
+   * @param id
+   */
   public void setId(long id) {
     this.id = id;
   }
 
+  /**
+   * gets user name as string
+   * @return string userName
+   */
   @NonNull
   public String getUserName() {
     return userName;
   }
 
+  /**
+   * sets user name
+   * @param userName
+   */
   public void setUserName(@NonNull String userName) {
     this.userName = userName;
   }
 
+  /**
+   * gets oauthKey as String
+   * @return oauthKey String
+   */
   public String getOauthKey() {
     return oauthKey;
   }
 
+  /**
+   * sets oauthKey
+   * @param oauthKey
+   */
   public void setOauthKey(String oauthKey) {
     this.oauthKey = oauthKey;
   }

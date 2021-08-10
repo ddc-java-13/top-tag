@@ -17,6 +17,9 @@ import edu.cnm.deepdive.toptag.adapter.ApplicationAdapter;
 import edu.cnm.deepdive.toptag.databinding.FragmentHuntBinding;
 import edu.cnm.deepdive.toptag.viewmodel.HuntViewModel;
 
+/**
+ * Inflates the hunt layout to the view model.
+ */
 public class HuntFragment extends Fragment implements OnItemSelectedListener {
 
   private FragmentHuntBinding binding;
@@ -25,6 +28,13 @@ public class HuntFragment extends Fragment implements OnItemSelectedListener {
   private String[] weaponChoices;
   private String[] seasonChoices;
 
+  /**
+   *  Creates and returns the view hierarchy associated with the fragment.
+   * @param inflater
+   * @param container
+   * @param savedInstanceState
+   * @return  Returns layout.
+   */
   public View onCreateView(@NonNull LayoutInflater inflater,
       ViewGroup container, Bundle savedInstanceState) {
     huntViewModel = new ViewModelProvider(this).get(HuntViewModel.class);
@@ -46,6 +56,11 @@ public class HuntFragment extends Fragment implements OnItemSelectedListener {
     return binding.getRoot();
   }
 
+  /**
+   * Initializes subclass.
+   * @param view
+   * @param savedInstanceState
+   */
   @Override
   public void onViewCreated(@NonNull View view,
       @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
@@ -57,7 +72,13 @@ public class HuntFragment extends Fragment implements OnItemSelectedListener {
     });
   }
 
-
+  /**
+   * The adapter view sets weapon choice and season choice to the position when selected.
+   * @param parent
+   * @param view
+   * @param position
+   * @param id
+   */
   @Override
   public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -69,6 +90,10 @@ public class HuntFragment extends Fragment implements OnItemSelectedListener {
 
   }
 
+  /**
+   * On nothing selected, do nothing.
+   * @param parent
+   */
   @Override
   public void onNothingSelected(AdapterView<?> parent) {
 

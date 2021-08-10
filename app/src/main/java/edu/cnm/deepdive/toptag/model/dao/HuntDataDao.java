@@ -8,11 +8,13 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.toptag.model.entity.HuntData;
-import edu.cnm.deepdive.toptag.model.pojo.HuntInfo;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ *  Interface for CRUD. Inserts/Deletes queries Hunt Data entity data.
+ */
 @Dao
 public interface HuntDataDao {
 

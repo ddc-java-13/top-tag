@@ -14,6 +14,9 @@ import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ *  Interface for CRUD. Inserts/Deletes queries Application Choice entity data.
+ */
 @Dao
 public interface ApplicationChoiceDao {
 

@@ -19,6 +19,9 @@ import edu.cnm.deepdive.toptag.R;
 import java.io.IOException;
 import org.xmlpull.v1.XmlPullParserException;
 
+/**
+ *  Receives google map, sets zoom and adds map overlay.
+ */
 public class MapFragment extends Fragment {
 
 
@@ -33,6 +36,10 @@ public class MapFragment extends Fragment {
      * If Google Play services is not installed on the device, the user will be prompted to
      * install it inside the SupportMapFragment. This method will only be triggered once the
      * user has installed Google Play services and returned to the app.
+     */
+    /**
+     * Sets map, map type, and kml layer plus adds start zoom.
+     * @param googleMap
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -55,6 +62,13 @@ public class MapFragment extends Fragment {
     }
   };
 
+  /**
+   *  Inlfates map to container.
+   * @param inflater
+   * @param container
+   * @param savedInstanceState
+   * @return inflated map layout.
+   */
   @Nullable
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater,
@@ -63,6 +77,11 @@ public class MapFragment extends Fragment {
     return inflater.inflate(R.layout.fragment_map, container, false);
   }
 
+  /**
+   * Initializes subclass.
+   * @param view
+   * @param savedInstanceState
+   */
   @Override
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);

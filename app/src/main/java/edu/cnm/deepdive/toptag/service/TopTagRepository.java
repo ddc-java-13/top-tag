@@ -8,6 +8,9 @@ import edu.cnm.deepdive.toptag.model.dao.HuntDataDao;
 import edu.cnm.deepdive.toptag.model.entity.HuntData;
 import java.util.List;
 
+/**
+ * Creats app repository
+ */
 public class TopTagRepository {
 
   private final Context context;
@@ -15,6 +18,10 @@ public class TopTagRepository {
   private final String[] seasonChoices;
   private final HuntDataDao huntDataDao;
 
+  /**
+   * Gets weapon choice and season choice arrays from database
+   * @param context
+   */
   public TopTagRepository(Context context) {
     this.context = context;
     Resources resources = context.getResources();
@@ -24,8 +31,13 @@ public class TopTagRepository {
     huntDataDao = database.getHuntDataDao();
   }
 
+  /**
+   * Gets data from data base and creates a filtered query.
+   * @param weaponChoice
+   * @param seasonChoice
+   * @return selected filtered query of bow, rifle, septEarly, septLate, octEarly and octLate
+   */
   public LiveData<List<HuntData>> getHuntData(String weaponChoice, String seasonChoice) {
-    // TODO Use weaponChoice & seasonChoice to invoke filtered query.
     Boolean bow = null;
     Boolean rifle = null;
     Boolean septEarly = null;

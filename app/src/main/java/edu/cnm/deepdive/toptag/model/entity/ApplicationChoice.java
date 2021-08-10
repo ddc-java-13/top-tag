@@ -28,6 +28,9 @@ import java.util.Date;
         )
     }
 )
+/**
+ * Sets as Entity class.
+ */
 public class ApplicationChoice {
 
   @PrimaryKey
@@ -56,14 +59,26 @@ public class ApplicationChoice {
     return gameManagementUnitId;
   }
 
+  /**
+   * sets id.
+   * @param gameManagementUnitId
+   */
   public void setGameManagementUnitId(long gameManagementUnitId) {
     this.gameManagementUnitId = gameManagementUnitId;
   }
 
+  /**
+   * gets id.
+   * @return
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   * sets id.
+   * @param id
+   */
   public void setId(long id) {
     this.id = id;
   }
@@ -76,40 +91,77 @@ public class ApplicationChoice {
 //    this.season = season;
 //  }
 
+  /**
+   * gets user id.
+   * @return
+   */
   public long getUserId() {
     return userId;
   }
 
+  /**
+   * sets user id
+   * @param userId
+   */
   public void setUserId(long userId) {
     this.userId = userId;
   }
 
+  /**
+   * gets SeasonType enum value
+   * @return
+   */
   @NonNull
   public SeasonType getSeasonType() {
     return seasonType;
   }
 
+  /**
+   * sets Season Type enum value
+   * @param seasonType
+   */
   public void setSeasonType(@NonNull SeasonType seasonType) {
     this.seasonType = seasonType;
   }
 
+  /**
+   * gets weapon type enum
+   * @return
+   */
   public WeaponType getWeaponType() {
     return weaponType;
   }
 
+  /**
+   * sets weapon type enum
+   * @param weaponType
+   */
   public void setWeaponType(WeaponType weaponType) {
     this.weaponType = weaponType;
   }
 
+  /**
+   * season type enum values
+   */
   public enum SeasonType {
     SEPT_EARLY, SEPT_LATE, OCT_EARLY, OCT_LATE;
 
+    /**
+     * converts season type enum to integer for database
+     * @param value
+     * @return return integer
+     */
     @TypeConverter
     public static Integer integerValue(SeasonType value) {
 
       return (value != null) ? value.ordinal() : null;
     }
 
+    /**
+     * converts integer from database to season type enum value.
+     * @param value
+     * @return returns enum
+     */
     @TypeConverter
     public static SeasonType valueOf(Integer value) {
 
@@ -118,10 +170,17 @@ public class ApplicationChoice {
 
   }
 
+  /**
+   * sets weapon type enum values
+   */
   public enum WeaponType {
     BOW, RIFLE;
 
-
+    /**
+     * converts enum to integer for database
+     * @param value
+     * @return returns integer
+     */
     @TypeConverter
     public static Integer integerValue(WeaponType value) {
 
@@ -129,6 +188,11 @@ public class ApplicationChoice {
 
     }
 
+    /**
+     * converts integer from database to enum
+     * @param value
+     * @return returns enum
+     */
     @TypeConverter
     public static WeaponType valueOf(Integer value) {
 

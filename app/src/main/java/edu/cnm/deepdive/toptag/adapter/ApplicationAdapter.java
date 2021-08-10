@@ -12,6 +12,9 @@ import edu.cnm.deepdive.toptag.model.entity.HuntData;
 import java.text.DecimalFormat;
 import java.util.List;
 
+/**
+ * Inflates hunt data to recyclerview.
+ */
 public class ApplicationAdapter extends RecyclerView.Adapter<Holder>{
 
   private final List<HuntData> huntDataList;
@@ -22,6 +25,11 @@ public class ApplicationAdapter extends RecyclerView.Adapter<Holder>{
 
   private final String valueFormat;
 
+  /**
+   * Inflates list of hunt data to recyclerview.
+   * @param huntDataList
+   * @param context
+   */
   public ApplicationAdapter(
       List<HuntData> huntDataList, Context context) {
     this.huntDataList = huntDataList;
@@ -30,6 +38,12 @@ public class ApplicationAdapter extends RecyclerView.Adapter<Holder>{
     valueFormat = context.getString(R.string.value_format);
   }
 
+  /**
+   * Creates view holder and inflates parent.
+   * @param parent
+   * @param viewType
+   * @return  Returns the binded holder.
+   */
   @NonNull
   @Override
   public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -37,11 +51,21 @@ public class ApplicationAdapter extends RecyclerView.Adapter<Holder>{
     return new Holder(binding);
   }
 
+  /**
+   *  Calls onBindViewHolder(ViewHolder, int) to update the RecyclerView.ViewHolder contents with the item at the given position
+   *  and also sets up some private fields to be used by RecyclerView.
+   * @param holder
+   * @param position
+   */
   @Override
   public void onBindViewHolder(@NonNull Holder holder, int position) {
     holder.bind(position);
   }
 
+  /**
+   * Returns the total number of items in the data set held by the adapter.
+   * @return the list of hunt data.
+   */
   @Override
   public int getItemCount() {
     return huntDataList.size();
@@ -51,6 +75,10 @@ public class ApplicationAdapter extends RecyclerView.Adapter<Holder>{
 
     private final ItemUnitBinding binding;
 
+    /**
+     *  Binds layout to the viewholder.
+     * @param binding
+     */
     public Holder(@NonNull ItemUnitBinding binding) {
       super(binding.getRoot());
       this.binding = binding;

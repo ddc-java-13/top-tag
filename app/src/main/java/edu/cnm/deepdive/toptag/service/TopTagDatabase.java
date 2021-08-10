@@ -42,30 +42,52 @@ import org.jetbrains.annotations.NotNull;
 
 )
 @TypeConverters(value = {WeaponType.class, Converters.class})
-
+/**
+ * Creates data base.  Extends room for SQLite data transfer.
+ */
 public abstract class TopTagDatabase extends RoomDatabase {
 
   private static final String DB_NAME = "top-tag-db";
 
   private static Application context;
 
-  // SET CONTEXT Method
+  /**
+   * sets context method
+   * @param context
+   */
   public static void setContext(Application context) {
     TopTagDatabase.context = context;
   }
 
-  //SINGLETON
+  /**
+   * Singleton to get instance
+   * @return instance
+   */
   public static TopTagDatabase getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
   // DAOs
+
+  /**
+   * gets User DAO
+   * @return user Dao
+   */
   public abstract UserDao getUserDao();
-
+  /**
+   * gets ApplicationChoice DAO
+   * @return ApplicationChoice Dao
+   */
   public abstract ApplicationChoiceDao getApplicationChoiceDao();
-
+  /**
+   * gets GameManagementUnit DAO
+   * @return GameManagementUnit Dao
+   */
   public abstract GameManagementUnitDao getGameManagementUnitDao();
-
+  /**
+   * gets HuntData Dao
+   * @return HuntData Dao
+   */
   public abstract HuntDataDao getHuntDataDao();
 
 
@@ -81,6 +103,10 @@ public abstract class TopTagDatabase extends RoomDatabase {
 
   private static class CallBack extends RoomDatabase.Callback {
 
+    /**
+     * Creates database from csv file hunt_data.csv
+     * @param db
+     */
     @Override
     public void onCreate(@NonNull SupportSQLiteDatabase db) {
       super.onCreate(db);
@@ -125,17 +151,26 @@ public abstract class TopTagDatabase extends RoomDatabase {
     }
   }
 
-
+  /**
+   * Enum type converters
+   */
   public static class Converters {
 
-
-
-
+    /**
+     * convert from date to something SQLite db can store
+     * @param value
+     * @returni Long
+     */
     @TypeConverter
-    public static Long toLong(Date value) {         /*convert from date to something SQLite db can store.  Second conversion back to date*/
+    public static Long toLong(Date value) {
       return (value != null) ? value.getTime() : null;
     }
 
+    /**
+     * conversion back to date
+     * @param value
+     * @return Date
+     */
     @TypeConverter
     public static Date toDate(Long value) {
       return (value != null) ? new Date(value) : null;

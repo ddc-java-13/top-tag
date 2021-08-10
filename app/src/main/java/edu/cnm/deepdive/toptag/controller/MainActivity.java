@@ -9,8 +9,15 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import edu.cnm.deepdive.toptag.R;
 
+/**
+ *  used to provide a default layout that will be inflated as part of super.onCreate
+ */
 public class MainActivity extends AppCompatActivity {
 
+  /**
+   * constructs the desired task stack
+   * @param savedInstanceState
+   */
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

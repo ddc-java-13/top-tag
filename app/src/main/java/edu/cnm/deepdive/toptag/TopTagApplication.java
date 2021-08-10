@@ -12,6 +12,9 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class TopTagApplication extends Application {
 
+  /**
+   * starts first activity
+   */
   @Override
   public void onCreate() {
     super.onCreate();

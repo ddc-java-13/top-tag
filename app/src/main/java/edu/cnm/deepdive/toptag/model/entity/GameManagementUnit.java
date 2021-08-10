@@ -4,6 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+
+/**
+ * Sets class as entity.
+ */
 @Entity(tableName = "game_management_unit")
 public class GameManagementUnit {
 
@@ -35,18 +39,34 @@ public class GameManagementUnit {
   @ColumnInfo(name = "tags_issued")
   private int tagsIssued;
 
+  /**
+   * gets game management unit id
+   * @return
+   */
   public long getId() {
     return id;
   }
 
+  /**
+   * sets game management unit id
+   * @param id
+   */
   public void setId(long id) {
     this.id = id;
   }
 
+  /**
+   * gets unit number
+   * @return
+   */
   public int getUnitNumber() {
     return unitNumber;
   }
 
+  /**
+   * sets unit number
+   * @param unitNumber
+   */
   public void setUnitNumber(int unitNumber) {
     this.unitNumber = unitNumber;
   }
@@ -75,18 +95,34 @@ public class GameManagementUnit {
 //    this.harvestNumber = harvestNumber;
 //  }
 
+  /**
+   * gets tag applications
+   * @return
+   */
   public int getTagApplications() {
     return tagApplications;
   }
 
+  /**
+   * sets tag applications
+   * @param tagApplications
+   */
   public void setTagApplications(int tagApplications) {
     this.tagApplications = tagApplications;
   }
 
+  /**
+   * gets tags issued
+   * @return
+   */
   public int getTagsIssued() {
     return tagsIssued;
   }
 
+  /**
+   * sets tags issued
+   * @param tagsIssued
+   */
   public void setTagsIssued(int tagsIssued) {
     this.tagsIssued = tagsIssued;
   }
