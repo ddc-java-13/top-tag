@@ -8,13 +8,13 @@
 
   <item
     android:id="@+id/navigation_dashboard"
-    android:icon="@drawable/ic_dashboard_black_24dp"
+    android:icon="@drawable/ic_elk"
     android:title="@string/title_hunt"/>
 
   <item
-    android:id="@+id/navigation_notifications"
-    android:icon="@drawable/ic_notifications_black_24dp"
-    android:title="@string/title_data"/>
+    android:id="@+id/navigation_notes"
+    android:icon="@drawable/ic_note"
+    android:title="@string/title_notes"/>
 
 
 </menu>

@@ -18,10 +18,10 @@
     tools:layout="@layout/fragment_hunt"/>
 
   <fragment
-    android:id="@+id/navigation_notifications"
-    android:label="@string/title_data"
-    android:name="edu.cnm.deepdive.toptag.controller.NotificationsFragment"
-    tools:layout="@layout/fragment_notifications"/>
+    android:id="@+id/navigation_notes"
+    android:label="@string/title_notes"
+    android:name="edu.cnm.deepdive.toptag.controller.NotesFragment"
+    tools:layout="@layout/fragment_notes"/>
 
 
 
