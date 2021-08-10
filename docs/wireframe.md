@@ -8,4 +8,6 @@ order: 10
 ## Wireframe 
 
 
-![Top Tag Wireframe](img/wireframe.png)
+[![Top Tag Wireframe](img/wireframe.png)](pdf/wireframe.pdf)
+
+
