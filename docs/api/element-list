@@ -1,0 +1,8 @@
+edu.cnm.deepdive.toptag
+edu.cnm.deepdive.toptag.adapter
+edu.cnm.deepdive.toptag.controller
+edu.cnm.deepdive.toptag.model.dao
+edu.cnm.deepdive.toptag.model.entity
+edu.cnm.deepdive.toptag.model.pojo
+edu.cnm.deepdive.toptag.service
+edu.cnm.deepdive.toptag.viewmodel

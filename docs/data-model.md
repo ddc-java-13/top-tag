@@ -10,7 +10,9 @@ order: 30
 
 ## [Data Access Object](https://github.com/ddc-java-13/top-tag/tree/main/app/src/main/java/edu/cnm/deepdive/toptag/model/dao)
 
-## [Database Class](https://github.com/ddc-java-13/top-tag/tree/main/app/src/main/java/edu/cnm/deepdive/toptag/service)
+## [Database Class](https://github.com/ddc-java-13/top-tag/blob/main/app/src/main/java/edu/cnm/deepdive/toptag/service/TopTagDatabase.java)
 
-## [Data Description Language](https://github.com/ddc-java-13/top-tag/tree/main/docs/sql)
+## [Repository Class](https://github.com/ddc-java-13/top-tag/blob/main/app/src/main/java/edu/cnm/deepdive/toptag/service/TopTagRepository.java)
+
+## [Data Description Language](ddl.md)
 
