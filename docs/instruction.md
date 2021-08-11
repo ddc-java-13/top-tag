@@ -17,6 +17,7 @@ Build Instructions
 ## Gradle Build
 
 * Add below to build.gradle(module) **dependencies**
+
 "// Google Maps libraries
 implementation 'com.google.android.gms:play-services-maps:17.0.1'
 implementation 'com.google.maps.android:android-maps-utils:2.2.3'"
@@ -32,7 +33,7 @@ implementation 'com.google.maps.android:android-maps-utils:2.2.3'"
 
 ## Android Manifest
 
-* In the AndroidManifest.xml file add"
+* In the AndroidManifest.xml file add
 
 "<meta-data
 android:name="com.google.android.geo.API_KEY"
@@ -42,7 +43,8 @@ android:value="${MAPS_API_KEY}" />"
 ## Properties File
 
 * In your projects level directory add the following code.
-google_maps_key = [enter api key here.  REMOVE THE BRACKETS! ]
+
+"google_maps_key = [enter api key here.  REMOVE THE BRACKETS! ]"
    
   
 App Instructions
