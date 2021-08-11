@@ -10,9 +10,9 @@
   <string name="weapon_select">Weapon Select</string>
   <string name="season_select">Season Select</string>
   <string name="unit">Unit</string>
-  <string name="tag">Tag</string>
-  <string name="app">App</string>
-  <string name="odds">Odds</string>
+  <string name="tag">Tags</string>
+  <string name="app">Apps</string>
+  <string name="odds">Draw Odds</string>
   <string name="value_format">"%02d"</string>
 
   <string-array name="weapon_choices">

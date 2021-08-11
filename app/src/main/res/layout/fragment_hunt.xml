@@ -54,11 +54,12 @@
     android:id="@+id/unit"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:padding="4dp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@id/weapon_layout"
     app:layout_constraintEnd_toStartOf="@id/tag"
     android:text="@string/unit"
+    android:textStyle="bold"
+    android:gravity="left"
     />
 
 
@@ -66,33 +67,36 @@
     android:id="@+id/tag"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:padding="4dp"
     app:layout_constraintStart_toEndOf="@id/unit"
     app:layout_constraintTop_toBottomOf="@id/weapon_layout"
     app:layout_constraintEnd_toStartOf="@id/application"
     android:text="@string/tag"
+    android:textStyle="bold"
+    android:gravity="left"
     />
 
   <TextView
     android:id="@+id/application"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:padding="4dp"
     app:layout_constraintStart_toEndOf="@id/tag"
     app:layout_constraintTop_toBottomOf="@id/weapon_layout"
     app:layout_constraintEnd_toStartOf="@id/percentage"
     android:text="@string/app"
+    android:textStyle="bold"
+    android:gravity="left"
     />
 
   <TextView
     android:id="@+id/percentage"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:padding="4dp"
     app:layout_constraintStart_toEndOf="@id/application"
     app:layout_constraintTop_toBottomOf="@id/weapon_layout"
     app:layout_constraintEnd_toEndOf="parent"
     android:text="@string/odds"
+    android:textStyle="bold"
+    android:gravity="left"
     />
 
   <androidx.recyclerview.widget.RecyclerView
