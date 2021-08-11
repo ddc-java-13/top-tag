@@ -18,3 +18,5 @@ order: 30
 
 ## [Generated Javadocs](api/index.html)
 
+## [License](license.md)
+
