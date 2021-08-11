@@ -18,5 +18,5 @@ order: 30
 
 ## [Generated Javadocs](api/index.html)
 
-## [License](license.md)
+## [License](https://github.com/ddc-java-13/top-tag/blob/main/docs/license.md)
 
